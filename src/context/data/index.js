@@ -4,10 +4,11 @@ const { cols, data } = mockData;
 
 const list = data.map((d) => {
   const dateStamp = d[3].split("/");
-  let date = new Date();
-  date.setFullYear(parseInt(dateStamp[2]));
-  date.setMonth(parseInt(dateStamp[1]) + 1);
-  date.setDate(parseInt(dateStamp[0]));
+  let date = new Date(
+    parseInt(dateStamp[2]),
+    parseInt(dateStamp[1]) + 1,
+    parseInt(dateStamp[0])
+  );
 
   return {
     [cols[0]]: d[0],
